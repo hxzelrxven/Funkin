@@ -321,7 +321,7 @@ enum abstract ScriptEventType(String) from String to String
    * This event is not cancelable.
    */
   public var FREEPLAY_RANK_SLAM = 'FREEPLAY_RANK_SLAM';
-  
+
   /**
    * Called when the entire freeplay capsule slams down.
    *
@@ -386,6 +386,27 @@ enum abstract ScriptEventType(String) from String to String
    * This event is not cancelable.
    */
   public var DIALOGUE_END = 'DIALOGUE_END';
+
+  /**
+   * Called when the game starts a cutscene.
+   *
+   * This event is not cancelable.
+   */
+  public var CUTSCENE_START = 'CUTSCENE_START';
+
+  /**
+   * Called to skip the cutscene.
+   *
+   * This event IS cancelable! Canceling this event will prevent the cutscene from skipping.
+   */
+  public var CUTSCENE_SKIP = 'CUTSCENE_SKIP';
+
+  /**
+   * Called when the game ends a cutscene.
+   *
+   * This event is not cancelable.
+   */
+  public var CUTSCENE_END = 'CUTSCENE_END';
 
   /**
    * Allow for comparing `ScriptEventType` to `String`.

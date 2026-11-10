@@ -273,3 +273,15 @@ interface IDialogueScriptedClass extends IScriptedClass
   public function onDialogueSkip(event:DialogueScriptEvent):Void;
   public function onDialogueEnd(event:DialogueScriptEvent):Void;
 }
+
+interface ICutsceneScriptedClass extends IScriptedClass
+{
+  /**
+   * Called as the cutscene starts.
+   */
+  public function onCutsceneStart(event:CutsceneScriptEvent):Void;
+
+  public function onCutsceneEvent(event:CutsceneScriptEvent):Void;
+  public function onCutsceneSkip(event:CutsceneScriptEvent):Void;
+  public function onCutsceneEnd(event:CutsceneScriptEvent):Void;
+}

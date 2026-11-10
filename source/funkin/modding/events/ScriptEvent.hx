@@ -6,6 +6,7 @@ import flixel.FlxState;
 import flixel.FlxSubState;
 import funkin.play.notes.NoteSprite;
 import funkin.play.notes.SustainTrail;
+import funkin.play.cutscene.Cutscene;
 import funkin.play.cutscene.dialogue.Conversation;
 import funkin.play.Countdown.CountdownStep;
 import funkin.play.notes.NoteDirection;
@@ -432,6 +433,28 @@ class DialogueScriptEvent extends ScriptEvent
   override public function toString():String
   {
     return 'DialogueScriptEvent(type=$type, conversation=$conversation)';
+  }
+}
+
+/**
+ * An event that is fired during a cutscene.
+ */
+class CutsceneScriptEvent extends ScriptEvent
+{
+  /**
+   * The cutscene being referenced by the event.
+   */
+  public var cutscene(default, null):Cutscene;
+
+  public function new(type:ScriptEventType, cutscene:Cutscene, cancelable:Bool = true):Void
+  {
+    super(type, cancelable);
+    this.cutscene = cutscene;
+  }
+
+  override public function toString():String
+  {
+    return 'CutsceneScriptEvent(type=$type, cutscene=$cutscene)';
   }
 }
 
